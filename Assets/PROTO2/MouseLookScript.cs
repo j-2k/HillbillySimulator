@@ -20,11 +20,14 @@ public class MouseLookScript : MonoBehaviour
     [SerializeField] float mouseY;
     [SerializeField] float chainsawSteeringXQE;
     [SerializeField] float timer = 0;
+
+    [SerializeField] int initialChainsawCurve;
+    [SerializeField] int postChainsawCurve;
     //[SerializeField] float chainsawSteeringXM;
     // Start is called before the first frame update
     void Start()
     {
-
+        postChainsawCurve = 50;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -64,13 +67,13 @@ public class MouseLookScript : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             playerBody.Rotate(Vector3.up * chainsawSteeringXQE); //LEFT/RIGHT | Moving Player body accoridng to up Vec aswell
             timer += Time.deltaTime;
-            if (timer <= 1)
+            if (timer <= 0.75)
             {
-                steeringSensitivity = 120;
+                steeringSensitivity = initialChainsawCurve; //150?
             }
-            if (timer > 1)
+            if (timer > 0.75)
             {
-                steeringSensitivity = 30;
+                steeringSensitivity = postChainsawCurve;
             }
         }
 

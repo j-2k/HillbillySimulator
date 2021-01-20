@@ -3569,7 +3569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7130430654075869695, guid: bc82216ba5041eb4a822554c16fb9c73, type: 3}
       propertyPath: mouseSensitivity
-      value: 1000
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130430654075869695, guid: bc82216ba5041eb4a822554c16fb9c73, type: 3}
+      propertyPath: initialChainsawCurve
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7130430654211166426, guid: bc82216ba5041eb4a822554c16fb9c73, type: 3}
       propertyPath: chainsawMeterUI
